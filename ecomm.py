@@ -1,3 +1,1 @@
-hello
-how r u 
-hi
+print("hello world")
