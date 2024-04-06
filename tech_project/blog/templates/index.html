@@ -1,0 +1,30 @@
+<!-- home page -->
+
+{% extends "base.html" %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                {#<li><a href="{% url 'posts' %}">Posts</a></li> #}
+               {# <li><a href="{% url 'register' %}">Sign Up</a></li>#}
+               {# <li><a href="{% url 'login' %}">Sign In</a></li>#}
+                {#<li><a href="{% url 'contacts' %}">Contacts</a></li>#}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Your main content goes here -->
+
+    <footer>
+        <p>© 2024 My Blog. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+{% endblock %}
