@@ -96,3 +96,56 @@ a {
 a:hover {
     text-decoration: underline;
 }
+/* Center the signup form */
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Style the signup button */
+.signup-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Center the login form */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Style the login button */
+.login-form button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+body {
+    background: black;
+    animation: color-me-in 5s; /* You can add other keywords like "infinite alternate" here */
+  }
+  
+  @keyframes color-me-in {
+    0% {
+      background: orange; /* Step 1 */
+    }
+    100% {
+      background: black; /* Step 2 */
+    }
+  }
+  @keyframes color-me-in {
+    0% {
+      background: orange; /* Step 1 */
+    }
+    50% {
+      background: blue; /* Adding a step in the middle */
+    }
+    100% {
+      background: black; /* Step 2 */
+    }
+  }  
