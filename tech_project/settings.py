@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'https://bug-free-trout-v664vj7gx76jf44j-8000.app.github.dev/','https://github.dev/github/dev']
 
 
 # Application definition
@@ -137,4 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+<<<<<<< HEAD
 CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
+=======
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
+>>>>>>> 56e98a15c1f60aeb8566f3d31d2b223630da3ed0
