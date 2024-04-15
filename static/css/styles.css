@@ -125,27 +125,3 @@ a:hover {
     padding: 10px 20px;
     cursor: pointer;
 }
-body {
-    background: black;
-    animation: color-me-in 5s; /* You can add other keywords like "infinite alternate" here */
-  }
-  
-  @keyframes color-me-in {
-    0% {
-      background: orange; /* Step 1 */
-    }
-    100% {
-      background: black; /* Step 2 */
-    }
-  }
-  @keyframes color-me-in {
-    0% {
-      background: orange; /* Step 1 */
-    }
-    50% {
-      background: blue; /* Adding a step in the middle */
-    }
-    100% {
-      background: black; /* Step 2 */
-    }
-  }  
