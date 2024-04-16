@@ -5,9 +5,10 @@
     {% for post in posts %}
         <div class="post">
             <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
-            <p>{{ post.content|truncatechars:100 }}</p>
+<!--        <p>Category: {{Category.name}}</p>
+            <p>{{ post.content|truncatechars:100 }}</p> 
             <p>Author: {{ post.author }}</p>
-            <p>Published Date: {{ post.pub_date }}</p>
+            <p>Published Date: {{ post.pub_date }}</p> -->
         </div>
     {% empty %}
         <p>No posts available.</p>
