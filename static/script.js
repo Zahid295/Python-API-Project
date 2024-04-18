@@ -180,3 +180,9 @@ function createPost() {
   });
 
 }
+
+document.getElementById('create-post-form').addEventListener('submit', function(event) {
+  event.preventDefault();  // Prevent the form from being submitted normally
+  createPost();
+
+});
