@@ -7,8 +7,8 @@ router.register(r'posts', views.PostViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('blog/posts/', views.posts, name='posts'),
-    path('post/<int:post_id>/', views.post_detail, name='post_detail'),
+    path('posts/<int:post_id>/', views.post_detail, name='post_detail'),
 ]
 
