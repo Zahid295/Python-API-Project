@@ -62,7 +62,7 @@
 // let currentPage = 1;
 
 // function fetchPosts() {
-//     fetch(`/posts/?page=${currentPage}`)
+//     fetch(`posts/?page=${currentPage}`)
 //         .then(response => response.json())
 //         .then(data => {
 //             let postsDiv = document.getElementById('posts');
