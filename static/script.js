@@ -150,3 +150,33 @@ window.onscroll = function() {
         fetchPosts();
     }
 };
+
+function createPost() {
+  const title = document.getElementById('title').value;
+  const content = document.getElementById('content').value;
+  // Get other fields as needed
+
+
+  fetch('/api/posts/create/', {  // Replace with your actual API endpoint
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      // Include CSRF token in header
+      'X-CSRFToken': getCookie('csrftoken')  // Assuming you have a function to get the CSRF token
+    },
+    body: JSON.stringify({
+      title: title,
+      content: content,
+      // Include other fields as needed
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message) {
+      alert(data.message);
+    } else if (data.error) {
+      alert(data.error);
+    }
+  });
+
+}
