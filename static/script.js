@@ -150,3 +150,92 @@ window.onscroll = function() {
         fetchPosts();
     }
 };
+
+function createPost() {
+  const title = document.getElementById('title').value;
+  const content = document.getElementById('content').value;
+  // Get other fields as needed
+
+
+  fetch('/create_posts/', {  // Replace with your actual API endpoint
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      // Include CSRF token in header
+      'X-CSRFToken': getCookie('csrftoken')  // Assuming you have a function to get the CSRF token
+    },
+    body: JSON.stringify({
+      title: title,
+      content: content,
+      // Include other fields as needed
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message) {
+      alert(data.message);
+    } else if (data.error) {
+      alert(data.error);
+    }
+  });
+
+}
+
+document.getElementById('create-post-form').addEventListener('submit', function(event) {
+  event.preventDefault();  // Prevent the form from being submitted normally
+  createPost();
+
+});
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+// Attach event listener to the form submission
+document.getElementById('create-post-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the form from being submitted normally
+
+    // Get input values (adjust these based on your form)
+    const title = document.getElementById('title').value;
+    const content = document.getElementById('content').value;
+
+    try {
+        const csrftoken = getCookie('csrftoken'); // Get the CSRF token
+        const response = await fetch('/create_posts/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken, // Include the CSRF token
+            },
+            body: JSON.stringify({
+                title: title,
+                content: content,
+                // Include other fields as needed
+            }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.message) {
+                alert(data.message);
+            } else {
+                alert('Post creation failed.'); // Handle other scenarios
+            }
+        } else {
+            alert('Error sending POST request: ' + response.statusText);
+        }
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+});
