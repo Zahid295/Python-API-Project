@@ -28,12 +28,12 @@ class PostViewSet(viewsets.ModelViewSet):
 
 @csrf_exempt
 
-def create_post(request):
+def create_posts(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         post = Post.objects.create(
-            title=data['title'],
-            content=data['content'],
+            title=data.get('title'),
+            content=data.get('content'),
             author=request.user,  # Assuming the user is logged in
             # Add other fields as needed
         )
