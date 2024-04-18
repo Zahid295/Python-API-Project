@@ -3,6 +3,9 @@ from .models import Post
 from .serializers import PostSerializer
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+import json
 
 # Create your views here.
 
@@ -22,3 +25,19 @@ def post_detail(request, post_id):
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+@csrf_exempt
+
+def create_post(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        post = Post.objects.create(
+            title=data['title'],
+            content=data['content'],
+            author=request.user,  # Assuming the user is logged in
+            # Add other fields as needed
+        )
+        return JsonResponse({'message': 'Post created successfully', 'post_id': post.id}, status=201)
+    else:
+        return JsonResponse({'error': 'Invalid request'}, status=400)
+    
