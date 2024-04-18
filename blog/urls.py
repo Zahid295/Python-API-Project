@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('api/', include(router.urls)),
     path('blog/posts/', views.posts, name='posts'),
+    path('posts/<int:post_id>', views.create_post, name='create_posts'),
     path('posts/<int:post_id>/', views.post_detail, name='post_detail'),
 ]
 
