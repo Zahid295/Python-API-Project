@@ -52,7 +52,7 @@ def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.user == post.author:
         post.delete()
-        return redirect('posts', post_id=post.pk)
+        return redirect('index')
     else:
         return redirect('post_detail', post_id=post.pk)
 
