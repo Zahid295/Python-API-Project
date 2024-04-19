@@ -7,9 +7,9 @@
     <p>Author: {{ post.author }}</p>
 
     <p>Published Date: {{ post.pub_date }}</p>
-    {% if user.is_authenticated and user == post.author %}
+<!--   {% if user.is_authenticated and user == post.author %} -->
     <a href="{% url 'post_update' pk=post.pk %}">Edit</a>
     <a href="{% url 'post_delete' pk=post.pk %}">Delete</a>
 
-
+<!-- {% endif %} -->
 {% endblock %}

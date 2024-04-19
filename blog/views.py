@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 
 # functions for views
 
@@ -42,19 +42,19 @@ def post_update(request, pk):
         form = PostUpdateForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('post_detail', post_id=post.pk)
     else:
         form = PostUpdateForm(instance=post)
     return render(request, 'blog/update_post.html', {'form': form})
 
-@login_required
+# @login_required
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.user == post.author:
         post.delete()
-        return redirect('posts')
+        return redirect('posts', post_id=post.pk)
     else:
-        return redirect('post_detail', pk=post.pk)
+        return redirect('post_detail', post_id=post.pk)
 
 
 class PostViewSet(viewsets.ModelViewSet):
