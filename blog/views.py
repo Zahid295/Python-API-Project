@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from .models import Post
+from .forms import PostForm
 from .serializers import PostSerializer
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
@@ -20,6 +21,16 @@ def posts(request):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog/index.html')
+    else:
+        form = PostForm()
+    return render(request, 'create_posts.html', {'form': form})
 
 
 class PostViewSet(viewsets.ModelViewSet):
