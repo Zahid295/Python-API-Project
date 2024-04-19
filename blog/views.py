@@ -30,7 +30,7 @@ def create_post(request):
             return redirect('blog/index.html')
     else:
         form = PostForm()
-    return render(request, 'create_posts.html', {'form': form})
+    return render(request, 'blog/create_posts.html', {'form': form})
 
 
 class PostViewSet(viewsets.ModelViewSet):
