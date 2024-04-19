@@ -47,7 +47,14 @@ def post_update(request, pk):
         form = PostUpdateForm(instance=post)
     return render(request, 'blog/update_post.html', {'form': form})
 
-
+@login_required
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.user == post.author:
+        post.delete()
+        return redirect('posts')
+    else:
+        return redirect('post_detail', pk=post.pk)
 
 
 class PostViewSet(viewsets.ModelViewSet):
