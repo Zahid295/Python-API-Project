@@ -38,18 +38,18 @@ from .forms import PostForm
 from django.http import HttpResponseRedirect
 
 def update_post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+    post = get_object_or_404(Post, pk=post_id)
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/success-url/')
+            return HttpResponseRedirect('blog/index.html')
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_form.html', {'form': form})
  
 
- 
+
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all().order_by('id')
     serializer_class = PostSerializer

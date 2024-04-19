@@ -11,5 +11,6 @@ urlpatterns = [
     path('blog/posts/', views.posts, name='posts'),
     path('create/', views.create_post, name='create_post'),
     path('posts/<int:post_id>/', views.post_detail, name='post_detail'),
+    path('post/<int:post_id>/update/', update_post, name='post-update'),
 ]
 
