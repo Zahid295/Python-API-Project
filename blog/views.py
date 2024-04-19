@@ -23,7 +23,7 @@ def post_detail(request, post_id):
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('id')
     serializer_class = PostSerializer
 
 @csrf_exempt
