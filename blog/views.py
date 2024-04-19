@@ -29,7 +29,7 @@ def create_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('blog/index.html')
+            return redirect('index')
     else:
         form = PostForm()
     return render(request, 'blog/create_posts.html', {'form': form})
