@@ -8,8 +8,9 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+# functions for views
 
 def index(request):
     
