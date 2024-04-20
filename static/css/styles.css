@@ -12,7 +12,7 @@ body, main {
     flex-direction: column;
     justify-content: space-between;
 }
-/* Header styling */
+/* Header styles */
 .header {
     width: 100%;
     height: auto;
@@ -22,7 +22,7 @@ body, main {
     color: white;
 }
 
-/* Navigation styling */
+/* Navigation stylyes */
 nav ul {
     list-style: none;
     padding: 0;
@@ -39,7 +39,7 @@ nav a {
     font-weight: bold;
 }
 
-/* Button styling */
+/* Button stylyes */
 .button {
     background-color: #4CAF50;
     border: none;
@@ -51,6 +51,8 @@ nav a {
     font-size: 14px;
     cursor: pointer;
 }
+
+/* Footer stylyes */
 footer {
     width: 100%;
     height: auto;
@@ -80,19 +82,19 @@ h1 {
     color: #333;
 }
 
-/* Form styles */
+/* Form styling */
 form {
     display: flex;
     flex-direction: column;
 }
 
-/* Label styles */
+/* Label styling */
 label {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-/* Input styles */
+/* Input styling */
 input {
     padding: 10px;
     margin-bottom: 15px;
@@ -100,7 +102,7 @@ input {
     border-radius: 3px;
 }
 
-/* Button styles */
+/* Button styling */
 button {
     background-color: #007bff;
     color: #fff;
@@ -110,23 +112,23 @@ button {
     cursor: pointer;
 }
 
-/* Link styles */
+/* Link styling */
 a {
     color: #007bff;
     text-decoration: none;
 }
 
-/* Hover effect for links */
+/* Hover to links */
 a:hover {
     text-decoration: underline;
 }
-/* Center the signup form */
+/* style for signup form */
 .signup-form {
     max-width: 400px;
     margin: 0 auto;
 }
 
-/* Style the signup button */
+/* Styling signup button */
 .signup-form button {
     background-color: #007bff;
     color: #fff;
@@ -135,13 +137,13 @@ a:hover {
     cursor: pointer;
 }
 
-/* Center the login form */
+/* Styles for login form */
 .login-form {
     max-width: 400px;
     margin: 0 auto;
 }
 
-/* Style the login button */
+/* Styling the login button */
 .login-form button {
     background-color: #28a745;
     color: #fff;
@@ -166,7 +168,7 @@ a:hover {
 }
 
 
-/* Layout */
+/* Styles for Layout */
 
 .container {
     max-width: 800px;
@@ -175,7 +177,7 @@ a:hover {
 }
 
 
-/* Lists */
+/* Styles for Lists */
 
 .post-list,
 
