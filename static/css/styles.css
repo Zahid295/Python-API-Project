@@ -221,4 +221,11 @@ a:hover {
       margin: auto;
     }
   }
-  
+
+/* CSS styles for Small screens */
+@media only screen and (max-width: 399px) {
+    .signup, .login {
+      width: 90%;
+      margin: auto;
+    }
+  }
