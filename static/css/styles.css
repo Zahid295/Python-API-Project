@@ -205,3 +205,12 @@ a:hover {
     color: #FF4136;
 
 }
+
+/* CSS for Large screens */
+@media only screen and (min-width: 600px) {
+    .signup, .login {
+      width: 50%;
+      margin: auto;
+    }
+  }
+ 
