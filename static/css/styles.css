@@ -206,11 +206,19 @@ a:hover {
 
 }
 
-/* CSS for Large screens */
+/* CSS styles for Large screens */
 @media only screen and (min-width: 600px) {
     .signup, .login {
       width: 50%;
       margin: auto;
     }
   }
- 
+
+/* CSS styles for Medium screens */
+@media only screen and (min-width: 400px) and (max-width: 599px) {
+    .signup, .login {
+      width: 70%;
+      margin: auto;
+    }
+  }
+  
